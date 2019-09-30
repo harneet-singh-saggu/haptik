@@ -1,0 +1,4 @@
+Point 1-> kill -9 `pgrep -f gunicorn’
+Point 2-> select distinct(SUBSTRING_INDEX(host,':',1)) as 'ip' from information_schema.processlist;
+Point 3-> cat version_json.txt | grep version |awk -F\" '/version/{print $4}'
+Point 4-> printf '%.*f\n' 2 $(awk '{for(i=1;i<=NF;i++)s+=$i}END{print s}' numbers.txt)
